@@ -42,4 +42,14 @@ public class IntToEngTest {
 			assertThat(actual, is(expected[i]));
 		}
 	}
+	@Test
+	public void translate20to90() {
+		IntToEng ite = new IntToEng();
+		int[] numbers = {20,30,40,50,60,70,80,90};
+		String[] expected = {"twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"};
+		for (int i = 0; i < expected.length; i++) {
+			String actual = ite.translateEng(numbers[i]);
+			assertThat(actual, is(expected[i]));
+		}
+	}
 }
