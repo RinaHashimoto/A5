@@ -17,10 +17,10 @@ public class IntToEng {
 		if (n < (1000*1000)) {
 			return underMillion(n);
 		} else if (n < (1000 * 1000 * 1000)) {
-			if (n % 1000*1000 == 0)
-				return underMillion(n / 1000*1000) + " million";
+			if (n % (1000*1000) == 0)
+				return underMillion(n / (1000*1000)) + " million";
 			else
-				return underMillion(n / 1000*1000) + " million " + underMillion(n % 1000*1000);
+				return underMillion(n / (1000*1000)) + " million " + underMillion(n % (1000*1000));
 			
 		}
 		return "x";
@@ -57,7 +57,7 @@ public class IntToEng {
 	}
 
 	static String underMillion(int n) {
-		if (n < 1000000) {
+		if (n < (1000*1000)) {
 			if (n < 1000)
 				return under1000(n);
 			if (n % 1000 == 0)
@@ -67,18 +67,5 @@ public class IntToEng {
 		}
 		return "x";
 	}
-	
-	/*
-	static String underBillion(int n) {
-		if (n < 1000000) {
-			if (n < 1000)
-				return under1000(n);
-			if (n % 1000 == 0)
-				return under1000(n / 1000) + " thousand";
-			else
-				return under1000(n / 1000) + " thousand " + under1000(n % 1000);
-		}
-		return "x";
-	}
-	*/
+
 }
