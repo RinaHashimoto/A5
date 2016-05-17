@@ -110,4 +110,17 @@ public class IntToEngTest {
 			assertThat(actual, is(expected[i]));
 		}
 	}
+	
+
+	@Test
+	public void translate1millionto999999999() {
+		IntToEng ite = new IntToEng();
+		int[] numbers = {1000000, 8229001, 10569909, 666654207, 999999999};
+		String[] expected = {"one million","eight million two hundred twenty nine thousand one","ten million five hundred sixty nine thousand nine hundred nine","six hundred sixty six million six hundred fifty four thousand two hundred seven","nine hundred ninety nine million nine hundred "
+				+ "ninety nine thousand nine hundred ninety nine"};
+		for (int i = 0; i < expected.length; i++) {
+			String actual = ite.translateEng(numbers[i]);
+			assertThat(actual, is(expected[i]));
+		}
+	}
 }
