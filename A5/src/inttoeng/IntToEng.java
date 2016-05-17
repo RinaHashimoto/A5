@@ -15,11 +15,11 @@ public class IntToEng {
 	// 数値を英訳する変換するメソッド
 	static String translateEng(int n) {
 
-		if (n < 100)
-			return under100(n);
-		else if (n < 1000) {
-			if (n%100 == 0) return under100(n/100) + " hundred";
-			else return under100(n/100) + " hundred " + under100(n%100);
+		if (n < 1000) {
+			return under1000(n);
+		}else if(n < 1000000){
+			if (n%1000 == 0) return under1000(n/1000) + " thousand";
+			else return under1000(n/1000) + " thousand " + under1000(n%1000);		
 		}
 			return "x";
 	}
@@ -38,6 +38,14 @@ public class IntToEng {
 				return ties[n / 10 - 2];
 			else
 				return ties[n / 10 - 2] + " " + numbers[n % 10];
+		}
+		return "x";
+	}
+	static String under1000(int n) {
+		if(n < 1000){
+			if(n<100) return under100(n);
+			if (n%100 == 0) return under100(n/100) + " hundred";
+			else return under100(n/100) + " hundred " + under100(n%100);
 		}
 		return "x";
 	}

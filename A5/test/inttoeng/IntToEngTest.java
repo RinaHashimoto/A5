@@ -88,4 +88,26 @@ public class IntToEngTest {
 			assertThat(actual, is(expected[i]));
 		}
 	}
+	
+	@Test
+	public void translate1000to9999() {
+		IntToEng ite = new IntToEng();
+		int[] numbers = {1000, 2900, 6999, 4207, 9999};
+		String[] expected = {"one thousand","two thousand nine hundred","six thousand nine hundred ninety nine","four thousand two hundred seven","nine thousand nine hundred ninety nine"};
+		for (int i = 0; i < expected.length; i++) {
+			String actual = ite.translateEng(numbers[i]);
+			assertThat(actual, is(expected[i]));
+		}
+	}
+
+	@Test
+	public void translate10000to999999() {
+		IntToEng ite = new IntToEng();
+		int[] numbers = {10000, 29001, 69909, 54207, 99999};
+		String[] expected = {"ten thousand","twenty nine thousand one","sixty nine thousand nine hundred nine","fifty four thousand two hundred seven","ninety nine thousand nine hundred ninety nine"};
+		for (int i = 0; i < expected.length; i++) {
+			String actual = ite.translateEng(numbers[i]);
+			assertThat(actual, is(expected[i]));
+		}
+	}
 }
